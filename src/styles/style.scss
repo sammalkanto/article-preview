@@ -1,0 +1,141 @@
+@import 'config.scss';
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    height: 100vh;
+}
+
+#root {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $lightGrayishBlue;
+}
+
+.card {
+    background: white;
+    width: 850px;
+    display: flex;
+    border-radius: 16px;
+    box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.1);
+
+    > .media {
+        width: 40%;
+        border-radius: 16px 0 0 16px;
+    }
+
+    > .content {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        padding: 48px;
+        gap: 16px;
+
+        > .info {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            > .title {
+                color: $veryDarkGrayishBlue;
+                font-weight: 700;
+            }
+            > .description {
+                color: $veryDarkGrayishBlue;
+            }
+        }
+
+        > .bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            > .socials {
+                display: none;
+            }
+
+            > .info {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+
+                > .avatar {
+                    width: 48px;
+                    border-radius: 100%;
+                }
+
+                > .box {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+
+                    > .author {
+                        font-weight: 700;
+                    }
+
+                    > .date {
+                        color: $grayishBlue;
+                    }
+                }
+            }
+
+            > .share {
+                display: flex;
+                background: $lightGrayishBlue;
+                padding: 12px;
+                border-radius: 100%;
+                position: relative;
+                cursor: pointer;
+
+                > img {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+    }
+}
+
+.tooltip {
+    display: flex;
+    background: $veryDarkGrayishBlue;
+    padding: 16px 28px;
+    border-radius: 12px;
+    gap: 12px;
+    position: absolute;
+    box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.3);
+    top: -80px;
+    right: -88px;
+    visibility: hidden;
+
+    &.active {
+        visibility: visible;
+    }
+
+    > .title {
+        color: $grayishBlue;
+        letter-spacing: 3px;
+        font-weight: 400;
+    }
+
+    > .icon {
+        height: 20px;
+    }
+
+    > .arrow {
+        position: absolute;
+        bottom: -16px;
+        right: calc(50% - 13px);
+        z-index: 2;
+        background: $veryDarkGrayishBlue;
+        width: 26px;
+        height: 16px;
+        clip-path: polygon(50% 100%, 0 0, 100% 0);
+    }
+}
+
+@import 'media.scss';

@@ -1,0 +1,81 @@
+
+@media (max-width: 900px) {
+  body {
+    height: auto;
+  }
+
+  #root {
+    padding: 48px 16px;
+    width: 100vw;
+  }
+
+  .card {
+    flex-direction: column;
+    width: 100%;
+    max-width: 360px;
+
+    > .media {
+      width: 100%;
+      border-radius: 16px 16px 0 0;
+    }
+
+    > .content {
+      width: auto;
+      padding: 0;
+
+      > .info {
+        padding: 32px 32px 0;
+
+        > .title {
+          font-size: 1.2rem;
+        }
+      }
+
+      > .bottom {
+        padding: 20px 32px;
+        border-radius: 0 0 16px 16px;
+
+        > .info {
+          &.active {
+            display: none;
+          }
+        }
+
+        &.active {
+          display: flex;
+          background: $veryDarkGrayishBlue;
+
+          .tooltip {
+            visibility: hidden;
+          }
+
+          > .socials {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            height: 48px;
+            justify-content: center;
+
+            > .title {
+              color: $grayishBlue;
+              letter-spacing: 3px;
+              font-weight: 400;
+            }
+
+            > .icon {
+              height: 20px;
+            }
+          }
+
+          > .share {
+            background: $desaturatedDarkBlue;
+
+            > img {
+              filter: brightness(0) invert(100%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
